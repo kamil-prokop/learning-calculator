@@ -25,6 +25,12 @@ second_number = float(input(second_number_text))
 arithmetic_description = str(str(types_of_calculations.get(intro_question)[3]) + " " + str(first_number) + " " 
                             + str(types_of_calculations.get(intro_question)[4]) + " " + str(second_number))
 
+additional_numbers = 0
+if intro_question == "1":
+    additional_numbers = int(input("Jeśli chcesz podać więcej niż dwa składniki, to podaj ile dodatkowych składników chcesz podać: "))
+elif intro_question == "3":
+    additional_numbers = int(input("Jeśli chcesz podać więcej niż dwa czynniki, to podaj ile dodatkowych czynników chcesz podać: "))
+
 logging.info(arithmetic_description)
 
 if intro_question == "1":
