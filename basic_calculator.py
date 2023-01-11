@@ -26,3 +26,13 @@ arithmetic_description = str(str(types_of_calculations.get(intro_question)[3]) +
                             + str(types_of_calculations.get(intro_question)[4]) + " " + str(second_number))
 
 logging.info(arithmetic_description)
+
+if intro_question == "1":
+    calculation_result = float(first_number) + float(second_number)
+elif intro_question == "2":
+    calculation_result = float(first_number) - float(second_number)
+elif intro_question == "3":
+    calculation_result = float(first_number) * float(second_number)
+else: calculation_result = float(first_number) / float(second_number)
+
+print("Wynik to: ", float(calculation_result))
