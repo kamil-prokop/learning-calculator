@@ -31,14 +31,31 @@ if intro_question == "1":
 elif intro_question == "3":
     additional_numbers = int(input("Jeśli chcesz podać więcej niż dwa czynniki, to podaj ile dodatkowych czynników chcesz podać: "))
 
+summing = 0
+product = 1
+
+for i in range(1, additional_numbers + 1):
+    next_number_text = "Podaj " + types_of_calculations.get(intro_question)[2] + " " + str(i+2) + ": "
+    next_number = float(input(next_number_text))
+    arithmetic_description = arithmetic_description + " " + str(types_of_calculations.get(intro_question)[4]) + " " + str(next_number)
+
+    if intro_question == "1":
+        summing = summing + next_number
+    elif intro_question == "3":
+        product = product * next_number
+
+if product != 1:
+    pass
+else: product == 1
+
 logging.info(arithmetic_description)
 
 if intro_question == "1":
-    calculation_result = float(first_number) + float(second_number)
+    calculation_result = float(first_number) + float(second_number) + float(summing)
 elif intro_question == "2":
     calculation_result = float(first_number) - float(second_number)
 elif intro_question == "3":
-    calculation_result = float(first_number) * float(second_number)
+    calculation_result = float(first_number) * float(second_number) * float(product)
 else: calculation_result = float(first_number) / float(second_number)
 
 print("Wynik to: ", float(calculation_result))
